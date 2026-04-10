@@ -1,5 +1,4 @@
 # ChronoVision AI main system controller
-# Leader: Sibtain
 
 import cv2
 
