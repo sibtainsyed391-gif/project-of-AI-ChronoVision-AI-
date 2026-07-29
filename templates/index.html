@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <title>ChronoVision AI Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+    📊 Dashboard
+    <div id="clock"></div>
+</header>
+   
+<div class="sidebar">
+    <h2>ChronoVision</h2>
+    <p>AI Monitoring System</p>
+</div>
+
+<div class="main">
+    <div class="top-nav">
+        <div class="section-title">Main Monitoring System</div>
+        <div class="button-group">
+            <a class="btn" href="{{ url_for('analytics') }}">Analytics</a>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat-box">
+            <p>Total Violations</p>
+            <h3>{{ attendance|length }}</h3>
+        </div>
+        <div class="stat-box">
+            <p>Active System</p>
+            <h3 class="online">ON</h3>
+        </div>
+    </div>
+
+    <div class="records-header">
+        <h3>Recent Violations</h3>
+    </div>
+
+    {% for record in attendance %}
+    <div class="card">
+        <div class="info">
+            <div class="name">{{ record[1] }}</div>
+            <div class="time">{{ record[2] }} | {{ record[3] }}</div>
+            <div class="status">⚠ Phone Usage</div>
+        </div>
+
+        <img src="/screenshots/{{ record[4].split('/')[-1] }}">
+    </div>
+    {% endfor %}
+
+</div>
+
+
+ <script>
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").innerText =
+        now.toLocaleDateString() + " | " + now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
