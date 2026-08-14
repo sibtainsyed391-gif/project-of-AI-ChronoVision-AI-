@@ -137,39 +137,32 @@ The system includes several optimizations to make real-time processing more prac
 
 ---
 
+
 ## 📸 System Screenshots
 
-### Real-Time Detection
+### 🖥️ Main Monitoring Dashboard
 
-*Add your phone/person detection screenshot here.*
+The main dashboard displays the current system status, total violations, recent violations, and captured evidence.
 
-```text
-[Detection Screenshot]
-```
+![ChronoVision Main Dashboard](screenshots/dashboard-main.png)
 
-### Face Recognition
+### 📊 Analytics Dashboard
 
-*Add your face recognition screenshot here.*
+The analytics dashboard provides a visual overview of detected violations per student.
 
-```text
-[Face Recognition Screenshot]
-```
+![ChronoVision Analytics Dashboard](screenshots/analytics-dashboard.png)
 
-### Violation Evidence
+### 📈 Violations Per Day
 
-*Add a screenshot showing the captured violation evidence here.*
+The system also provides daily violation analytics to help visualize monitoring activity over time.
 
-```text
-[Violation Screenshot]
-```
+![ChronoVision Daily Analytics](screenshots/analytics-daily.png)
 
-### Flask Dashboard
+### 📱 Phone Usage Detection
 
-*Add your dashboard screenshot here.*
+When phone usage is detected, ChronoVision captures visual evidence that can be reviewed through the dashboard.
 
-```text
-[Dashboard Screenshot]
-```
+![ChronoVision Phone Violation Detection](screenshots/phone-violation.png)
 
 ---
 
