@@ -1,15 +1,4 @@
----
-title: ChronoVision AI
-emoji: 🧠
-colorFrom: blue
-colorTo: green
-sdk: python
-app_file: app.py
-pinned: false
-python_version: "3.10"
----
-
-# ChronoVision AI
+  # ChronoVision AI
 
 ### Smart Classroom Monitoring System Using Artificial Intelligence
 
