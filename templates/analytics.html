@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>ChronoVision AI Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+    📊 Analytics
+    <div id="clock"></div>
+</header>
+
+<div class="sidebar">
+    <h2>ChronoVision</h2>
+    <p>AI Monitoring System</p>
+</div>
+
+<div class="main">
+    <div class="top-nav">
+        <div class="section-title">Analytics Dashboard</div>
+        <div class="button-group">
+            <a class="btn secondary" href="{{ url_for('index') }}">Main Screen</a>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat-box">
+            <p>Total Violations</p>
+            <h3>{{ attendance|length }}</h3>
+        </div>
+        <div class="stat-box">
+            <p>Top Offender</p>
+            <h3>{{ top_student }} ({{ top_student_count }})</h3>
+        </div>
+    </div>
+
+    <div class="charts">
+        <div class="chart-box">
+            <h3>Violations per Student</h3>
+            <canvas id="studentChart"></canvas>
+        </div>
+        <div class="chart-box">
+            <h3>Violations per Day</h3>
+            <canvas id="dateChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").innerText =
+        now.toLocaleDateString() + " | " + now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+</script>
+
+<script>
+const studentLabels = {{ student_labels | tojson }};
+const studentValues = {{ student_values | tojson }};
+const dateLabels = {{ date_labels | tojson }};
+const dateValues = {{ date_values | tojson }};
+
+new Chart(document.getElementById('studentChart'), {
+    type: 'bar',
+    data: {
+        labels: studentLabels,
+        datasets: [{
+            label: 'Violations',
+            data: studentValues,
+            backgroundColor: 'rgba(56, 189, 248, 0.7)',
+            borderColor: 'rgba(56, 189, 248, 1)',
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+new Chart(document.getElementById('dateChart'), {
+    type: 'line',
+    data: {
+        labels: dateLabels,
+        datasets: [{
+            label: 'Daily Violations',
+            data: dateValues,
+            fill: true,
+            backgroundColor: 'rgba(34, 197, 94, 0.2)',
+            borderColor: 'rgba(34, 197, 94, 1)',
+            tension: 0.3
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+</script>
+
+</body>
+</html>
