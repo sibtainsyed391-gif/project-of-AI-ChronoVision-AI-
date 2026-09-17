@@ -89,7 +89,8 @@ if __name__ == '__main__':
     detection_thread.start()
     print("🔍 Detection started in background...")
     
-    # Run Flask app
-    app.run(debug=True, port=5000)
+    # Run Flask app (Hugging Face Spaces / local host)
+    app.run(host="0.0.0.0", port=7860, debug=False)
+
 
 

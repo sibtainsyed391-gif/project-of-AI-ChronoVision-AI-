@@ -137,7 +137,6 @@ The system includes several optimizations to make real-time processing more prac
 
 ---
 
-
 ## 📸 System Screenshots
 
 ### 🖥️ Main Monitoring Dashboard
@@ -379,6 +378,10 @@ Start the system with:
 python app.py
 ```
 
+```bash
+python app.py
+```
+
 The Flask dashboard will be available at:
 
 ```text
@@ -476,3 +479,4 @@ This project was developed for educational and academic purposes.
 Smart Classroom Monitoring System Using Artificial Intelligence
 
 🏆 **1st Position — University of Sindh, MBBS Campus Dadu**
+
