@@ -1,0 +1,10 @@
+*.db
+*.sqlite
+*.sqlite3
+*.csv
+modules/face_recognition/FaceBase.db
+screenshots/
+dataset/students/
+__pycache__/
+*.pyc
+.env
