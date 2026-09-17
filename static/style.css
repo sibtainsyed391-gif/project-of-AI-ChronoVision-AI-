@@ -25,8 +25,12 @@ body {
 
 /* ===== MAIN ===== */
 .main {
+    margin-left: 320px;
     flex: 1;
-    padding: 20px;
+    padding: 40px;
+    width: calc(100% - 320px);
+}
+
 }
 
 header {
